@@ -1,38 +1,116 @@
-.App {
+*
+{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+body
+{
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-bar
+{
+  background-color: rgb(117, 188, 250);
+  text-align:  center;
+  padding:1rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2
+{
+  margin: 12px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.btn
+{
+  background-color: rgb(77, 160, 231);
+  border-radius: 2px;
+  padding: 3px 1.5rem 3px 1.5rem;
+  text-decoration: none;
+  font-weight: bolder;
   color: white;
+  transition: ease-out 300ms;
+  margin: 10px;
+}
+.btn:hover
+{
+  border: 1px solid rgb(77, 160, 231);
+  background-color: white;
+  color: black;
+}
+.cart_container
+{
+  margin: 2rem 14rem 1rem 14rem;
+}
+.cart_container h1
+{
+  background-color: #005dd3;
+  color: white;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.cart_item
+{
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+  padding: .5rem 2.5rem .5rem 2.5rem;
+  text-align: start;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img
+{
+  height: 6rem;
+  width: 6rem;
+}
+.cart_btn
+{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #005dd3;
+}
+.cart_btn:hover
+{
+  color: #005bd365;
+}
+.cart_item h4
+{
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.prd_price
+{
+  color: darkgrey;
+}
+.inc_btn,.dec_btn
+{
+  font-size: large;
+  font-weight: 400;
+  width: .5rem;
+}
+.footer
+{
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #005dd3;
+  margin: .5rem 2rem .5rem 2rem;
+  padding: .5rem;
+  letter-spacing: 2px;
+}
+.clear-cart
+{
+  border: none;
+  padding: 4px 1.5rem 4px 1.5rem;
+  background-color: tomato;
+  color: white;
+  transition: ease-in-out 300ms;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.clear-cart:hover
+{
+  border: 1px solid red;
+  background-color: white;
+  color: tomato;
 }

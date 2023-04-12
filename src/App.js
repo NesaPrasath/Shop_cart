@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Nav from './component/nav'
+import Home from './component/home'
+import Error from './component/Error';
+import Cartcontainer from './component/Cart';
+import data from "./component/data";
+import { createStore } from 'redux';
+import reducer from './reducer';
+import { Provider } from 'react-redux';
+const initialstore=
+{
+  cart:data,
+  total:10,
+  amount:0
+};
+const store=createStore(reducer,initialstore)
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav></Nav>
+      <div className='content'>
+      <Provider store={store}>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/about' element={<div><h2>About Page</h2></div>}></Route>
+        <Route path='/Product' element={<Cartcontainer/>}></Route>
+        <Route path='*' element={<Error/>}></Route>
+      </Routes>
+      </BrowserRouter>
+      </Provider>
+      </div>
     </div>
   );
 }
