@@ -15,6 +15,7 @@ const initialstore=
   amount:0
 };
 const store=createStore(reducer,initialstore)
+//changes to check the store
 function App() {
   return (
     <div className="App">
